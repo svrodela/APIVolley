@@ -15,20 +15,20 @@ class MainActivity : AppCompatActivity() {
         setup()
     }
 
-    fun setup() {
+   fun setup() {
         val textView = findViewById<TextView>(R.id.textId)
         // ...
 
         // Instantiate the RequestQueue.
         val queue = Volley.newRequestQueue(this)
-        val url = "https://jsonplaceholder.typicode.com"
+        val url = "https://dry-fjord-94565.herokuapp.com/ver"
 
         // Request a string response from the provided URL.
         val stringRequest = StringRequest(
             Request.Method.GET, url,
             { response ->
                 // Display the first 500 characters of the response string.
-                textView.text = "Response is: ${response.substring(0, 500)}"
+                textView.text = "Response is: ${response.substring(0, 100)}"
             },
             { textView.text = "That didn't work!" })
 
